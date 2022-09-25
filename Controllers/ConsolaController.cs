@@ -30,7 +30,10 @@ namespace Examen.Controllers
             try
             {
                 var result = ConsolaService.InsertarConsola(consola);
-                return Ok("Exito");
+                if (result)
+                    return Ok("Exito");
+                else
+                    return BadRequest("Error al insertar");
 
             }
             catch (Exception e)
@@ -39,13 +42,37 @@ namespace Examen.Controllers
             }
         }
 
-        // GET: Consola/Create
-        public IHttpActionResult Create()
+        [HttpPut]
+        public IHttpActionResult Actualizar(Consola consola)
         {
-            return Ok();
+            try
+            {
+                var result = ConsolaService.Actualizar(consola);
+                if (result)
+                    return Ok("Exito");
+                else
+                    return BadRequest("Error al acualizar");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
+        [HttpDelete]
+        public IHttpActionResult Eliminar(Consola consola)
+        {
+            try
+            {
+                var result = ConsolaService.Eliminar(consola);
+                return Ok();
 
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
 
     }
 }

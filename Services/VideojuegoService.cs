@@ -84,17 +84,8 @@ namespace Examen.Services
             ExamenSQL SQL = new ExamenSQL();
             SqlParameter OpcionParameter = new SqlParameter("@Opcion", 9);
             SqlParameter IdVideojuegoParameter = new SqlParameter("@IdVideojuego", videojuego.IdVideojuego);
-            //SqlParameter TituloParameter = new SqlParameter("@Titulo", videojuego.Titulo);
-            //SqlParameter DescripcionParameter = new SqlParameter("@Descripcion", videojuego.Descripcion);
-            //SqlParameter AnioParameter = new SqlParameter("@Año", videojuego.Anio);
-            //SqlParameter CalificacionParameter = new SqlParameter("@Calificacion", videojuego.Calificacion);
-            //SqlParameter GeneroParameter = new SqlParameter("@Genero", videojuego.Genero);
 
             return SQL.Database.SqlQuery<Videojuego>("SpAccionesVideojuegos @Opcion, @IdVideojuego",OpcionParameter, IdVideojuegoParameter);
-
-            //return SQL.Database.SqlQuery<Videojuego>("SpAccionesVideojuegos @Opcion, @IdVideojuego, @Titulo, @Descripcion, @Año, @Calificacion, @Genero",
-            //    OpcionParameter, IdVideojuegoParameter, TituloParameter, DescripcionParameter, AnioParameter, CalificacionParameter, GeneroParameter);
-
         }
     }
 }
