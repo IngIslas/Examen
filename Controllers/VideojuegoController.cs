@@ -37,6 +37,8 @@ namespace Examen.Controllers
             {
 
                 var result = VideojuegoService.Insertar(videojuego).ToList();
+                videojuego.IdVideojuego = result[0].IdVideojuego;
+                AsignarConsolas(videojuego);
                 return Ok("Exito");
             }
             catch (Exception e)
@@ -78,11 +80,14 @@ namespace Examen.Controllers
             }
         }
 
-        [HttpDelete]
-        public IHttpActionResult Eliminar(Videojuego videojuego) {
+        [HttpPost]
+        public IHttpActionResult Eliminar(List<Videojuego> videojuegos) {
             try
             {
-                VideojuegoService.Eliminar(videojuego).ToList();
+                videojuegos.ForEach(videojuego =>
+                {
+                    VideojuegoService.Eliminar(videojuego).ToList();
+                });
                 return Ok("Exito");
             }
             catch (Exception e)
