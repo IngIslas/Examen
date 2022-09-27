@@ -17,7 +17,7 @@ namespace Examen.Models
         public string Descripcion { get; set; }
 
         [Required]
-        public int Anio { get; set; }
+        public int Año { get; set; }
 
         [Required]
         public double Calificacion { get; set; }

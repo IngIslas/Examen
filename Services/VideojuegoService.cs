@@ -27,7 +27,7 @@ namespace Examen.Services
             SqlParameter IdVideojuegoParameter = new SqlParameter("@IdVideojuego", DBNull.Value);
             SqlParameter TituloParameter = new SqlParameter("@Titulo", videojuego.Titulo);
             SqlParameter DescripcionParameter = new SqlParameter("@Descripcion", videojuego.Descripcion);
-            SqlParameter AnioParameter = new SqlParameter("@Año", videojuego.Anio);
+            SqlParameter AnioParameter = new SqlParameter("@Año", videojuego.Año);
             SqlParameter CalificacionParameter = new SqlParameter("@Calificacion", videojuego.Calificacion);
             SqlParameter GeneroParameter = new SqlParameter("@Genero", videojuego.Genero);
 
@@ -70,7 +70,7 @@ namespace Examen.Services
             SqlParameter IdVideojuegoParameter = new SqlParameter("@IdVideojuego", videojuego.IdVideojuego);
             SqlParameter TituloParameter = new SqlParameter("@Titulo", videojuego.Titulo);
             SqlParameter DescripcionParameter = new SqlParameter("@Descripcion", videojuego.Descripcion);
-            SqlParameter AnioParameter = new SqlParameter("@Año", videojuego.Anio);
+            SqlParameter AnioParameter = new SqlParameter("@Año", videojuego.Año);
             SqlParameter CalificacionParameter = new SqlParameter("@Calificacion", videojuego.Calificacion);
             SqlParameter GeneroParameter = new SqlParameter("@Genero", videojuego.Genero);
 
